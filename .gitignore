@@ -1,0 +1,21 @@
+# Build outputs
+[Bb]uild/
+[Bb]in/
+*.o
+*.a
+*.out
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+*-debug
+*-release
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.clang-format
+compile_commands.json
