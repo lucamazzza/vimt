@@ -1,6 +1,6 @@
 <p align='center'>
 
-<img src="https://capsule-render.vercel.app/api?type=venom&color=782b90&height=200&section=header&text=vimt&fontSize=90&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=OS%20Wide%20vim%20interaction&descAlignY=61&descAlign=50"/>
+<img src="https://capsule-render.vercel.app/api?type=venom&color=009130&height=200&section=header&text=vimt&fontSize=90&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=OS%20Wide%20vim%20interaction&descAlignY=61&descAlign=50"/>
 
 
 </p>
