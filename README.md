@@ -29,6 +29,6 @@ Configuration
 <hr>
 <p align="center">
   
-<!--<img src="https://repobeats.axiom.co/api/embed/b4c43374bdf8e8698cccfe6355edcf5ca3798970.svg" alt="Repobeats analytics image"/>-->
+<img src="https://repobeats.axiom.co/api/embed/b261d962b3579358db2020d20c4461a4f8ab5ad7.svg" alt="Repobeats analytics image"/>
   
 </p>
