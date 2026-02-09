@@ -8,7 +8,7 @@
 <p align='center'>
 
 <img src="https://img.shields.io/badge/17-%23044f88?style=for-the-badge&logo=cplusplus&logoColor=%23044f88&labelColor=%23ffffff&color=%23044f88"/>
-<img src="https://img.shields.io/github/actions/workflow/status/lucamazzza/vimt/.github%2Fworkflows%2Fcmake.yml?style=for-the-badge&logo=cmake&logoSize=auto&label=%20"/>
+<!--<img src="https://img.shields.io/github/actions/workflow/status/lucamazzza/vimt/.github%2Fworkflows%2Fcmake.yml?style=for-the-badge&logo=cmake&logoSize=auto&label=%20"/>-->
 <img src="https://img.shields.io/github/v/release/lucamazzza/vimt?include_prereleases&sort=date&display_name=release&style=for-the-badge&label=%20"/>
 
 </p>
