@@ -18,6 +18,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     ${APPKIT_LIB}
     ${APPSERVICES_LIB}
     ${FOUNDATION_LIB}
+    ${CARBON_LIB}
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)

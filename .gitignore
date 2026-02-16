@@ -19,3 +19,4 @@
 *.swo
 .clang-format
 compile_commands.json
+_*
