@@ -5,6 +5,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(SOURCES
+    include/core/AppDaemon.h
+    src/core/AppDaemon.mm
+
     src/main.cpp
 )
 
