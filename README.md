@@ -16,6 +16,8 @@
 What is it?
 -----------
 
+Vimt is a macOS tool that allows you to navigate your OS through vim motions and commands.
+
 Documentation
 -------------
 
