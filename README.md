@@ -16,6 +16,9 @@
 What is it?
 -----------
 
+Vimt is a macOS tool that allows you to navigate your OS through vim motions and commands.
+The tool is written in `C++` (for whatever regards the base logic) and in `Objective C++` to interface the tool with macOS' system.
+
 Documentation
 -------------
 
