@@ -1,4 +1,5 @@
 #include "core/AppDaemon.h"
+#include "macos/EventTap.h"
 
 #import <AppKit/AppKit.h>
 
@@ -75,13 +76,14 @@ void AppDaemon::startSocketListener() {
 }
 
 void AppDaemon::run() {
+    auto eventTap = std::make_unique<EventTap>();
     m_isRunning = true;
     @autoreleasepool {
         NSApplication *app = [NSApplication sharedApplication];
         [app setActivationPolicy:NSApplicationActivationPolicyAccessory];
         std::thread listenerThread(&AppDaemon::startSocketListener, this);
         listenerThread.detach();
-        // TODO: eventTap support
+        eventTap->start();
         std::cout << "AppDaemon is starting..." << std::endl;
         [app run];
     }

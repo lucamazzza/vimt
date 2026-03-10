@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(SOURCES
     include/core/AppDaemon.h
     src/core/AppDaemon.mm
+    include/macos/EventTap.h
+    src/macos/EventTap.mm
 
     src/main.cpp
 )
