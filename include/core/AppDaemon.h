@@ -3,6 +3,9 @@
 #include <string>
 #include <thread>
 #include <atomic>
+#include <memory>
+
+class EventTap;
 
 class AppDaemon {
 public:
@@ -14,7 +17,9 @@ public:
 private:
     void startSocketListener();
     void cleanupSocket();
+    void reloadConfiguration();
     std::atomic<bool> m_isRunning;
     int m_serverSocket;
     const std::string m_socketPath = "/tmp/vimt_daemon.sock";
+    std::shared_ptr<EventTap> m_eventTap;
 };

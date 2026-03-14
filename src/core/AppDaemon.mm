@@ -8,7 +8,7 @@
 #include <sys/un.h>
 #include <unistd.h>
 
-AppDaemon::AppDaemon() : m_isRunning(false), m_serverSocket(-1) {}
+AppDaemon::AppDaemon() : m_isRunning(false), m_serverSocket(-1), m_eventTap(nullptr) {}
 
 AppDaemon::~AppDaemon() {
     m_isRunning = false;
@@ -21,6 +21,15 @@ void AppDaemon::cleanupSocket() {
         m_serverSocket = -1;
     }
     unlink(m_socketPath.c_str());
+}
+
+void AppDaemon::reloadConfiguration() {
+    std::cout << "Reloading vimt configuration..." << std::endl;
+    if (m_eventTap) {
+        m_eventTap->stop();
+        m_eventTap->start();
+        std::cout << "Event tap reloaded successfully" << std::endl;
+    }
 }
 
 void AppDaemon::sendCommand(const std::string &command) {
@@ -59,8 +68,7 @@ void AppDaemon::startSocketListener() {
             std::string command(buffer);
             std::cout << "Received command: " << command << std::endl;
             if (command == "reload") {
-                // TODO: Handle reload command
-                std::cout << "Reloading vimt configuration..." << std::endl;
+                reloadConfiguration();
             } else if (command == "quit") {
                 std::cout << "Quitting vimt..." << std::endl;
                 m_isRunning = false;
@@ -76,14 +84,14 @@ void AppDaemon::startSocketListener() {
 }
 
 void AppDaemon::run() {
-    auto eventTap = std::make_unique<EventTap>();
+    m_eventTap = std::make_shared<EventTap>();
     m_isRunning = true;
     @autoreleasepool {
         NSApplication *app = [NSApplication sharedApplication];
         [app setActivationPolicy:NSApplicationActivationPolicyAccessory];
         std::thread listenerThread(&AppDaemon::startSocketListener, this);
         listenerThread.detach();
-        eventTap->start();
+        m_eventTap->start();
         std::cout << "AppDaemon is starting..." << std::endl;
         [app run];
     }
