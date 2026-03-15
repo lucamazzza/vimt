@@ -1,6 +1,7 @@
 #pragma once
 
 #include <ApplicationServices/ApplicationServices.h>
+#include "vim/StateMachine.h"
 
 class EventTap {
 public:
@@ -15,4 +16,5 @@ private:
     CFMachPortRef m_eventTap;
     CFRunLoopSourceRef m_runLoopSource;
     bool m_isRunning;
+    StateMachine m_stateMachine;
 };

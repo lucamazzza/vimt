@@ -15,7 +15,7 @@ public:
     inline Mode getMode() const { return m_currentMode; };
 private:
     Mode m_currentMode;
-
     bool shouldSwallowKey(uint16_t keycode, uint64_t modifiers) const;
     void handleModeTransition(uint16_t keycode, uint64_t modifiers);
+    void simulateArrowKey(uint16_t keycode);
 };
