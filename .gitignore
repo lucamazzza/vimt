@@ -15,6 +15,7 @@
 # IDEs
 .vscode/
 .idea/
+.cache/
 *.swp
 *.swo
 .clang-format

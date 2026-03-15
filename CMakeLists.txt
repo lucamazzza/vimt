@@ -11,6 +11,9 @@ set(SOURCES
     include/macos/EventTap.h
     src/macos/EventTap.mm
 
+    include/macos/SystemUtils.h
+    src/macos/SystemUtils.mm
+
     include/vim/StateMachine.h
     src/vim/StateMachine.cpp
 

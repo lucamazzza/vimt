@@ -24,13 +24,19 @@ bool EventTap::checkPermissions() {
 }
 
 CGEventRef EventTap::eventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *userInfo) {
-    if (type == kCGEventKeyDown || type == kCGEventKeyUp || type == kCGEventFlagsChanged) {
+    if (type == kCGEventKeyDown) {
+        EventTap *eventTap = static_cast<EventTap*>(userInfo);
         CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
         CGEventFlags flags = CGEventGetFlags(event);
-        const char *eventType = (type == kCGEventKeyDown) ? "DOWN" : (type == kCGEventKeyUp) ? "UP" : "FLAGS";
-        std::cout << "Key " << eventType << ": " << keyCode << " with flags: 0x" << std::hex << flags << std::dec << std::endl;
+        
+        std::cout << "Key DOWN: " << keyCode << " with flags: 0x" << std::hex << flags << std::dec << std::endl;
+        
+        bool swallowed = eventTap->m_stateMachine.handleKey(keyCode, flags);
+        if (swallowed) {
+            std::cout << "Key swallowed by state machine" << std::endl;
+            return nullptr;
+        }
     }
-    // INFO: for now just pass events through
     return event;
 }
 
