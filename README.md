@@ -2,7 +2,6 @@
 
 <img src="https://capsule-render.vercel.app/api?type=venom&color=009130&height=200&section=header&text=vimt&fontSize=90&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=OS%20Wide%20vim%20interaction&descAlignY=61&descAlign=50"/>
 
-
 </p>
 
 <p align='center'>
@@ -10,6 +9,9 @@
 <img src="https://img.shields.io/github/v/release/lucamazzza/vimt?include_prereleases&sort=date&display_name=release&style=for-the-badge&label=%20"/>
 
 </p>
+
+> [!NOTE]
+> Currently paused
 
 What is it?
 -----------
