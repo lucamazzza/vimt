@@ -11,7 +11,7 @@
 </p>
 
 > [!NOTE]
-> Currently paused
+> Currently paused, about to be resumed in a couple of weeks
 
 What is it?
 -----------
